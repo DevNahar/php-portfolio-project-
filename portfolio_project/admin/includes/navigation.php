@@ -14,18 +14,18 @@
 								</li>
 								<li><a href="project_list.php"><i class="icon-stack-star"></i> <span>Our Projects</span></a>
 								</li>
-								<li ><a href="index.html"><i class="icon-users2"></i> <span>Our Staff</span></a>
+								<li ><a href="staff_list.php"><i class="icon-users2"></i> <span>Our Staff</span></a>
 								</li>
-								<li ><a href="index.html"><i class=" icon-users4"></i> <span>Our clients</span></a>
+								<li ><a href="client_list.php"><i class=" icon-users4"></i> <span>Our clients</span></a>
 								</li>
-								<li ><a href="index.html"><i class=" icon-floppy-disk"></i> <span>Contact Message</span></a>
+								<li ><a href="contact.php"><i class=" icon-floppy-disk"></i> <span>Contact Message</span></a>
 								</li>
 
 								<li>
 									<a href="#"><i class="icon-gear"></i> <span>Back Office Setup</span></a>
 									<ul>
-										<li><a href="layout_navbar_fixed.html">Category</a></li>
-										<li><a href="layout_navbar_fixed.html">Designation</a></li>
+										<li><a href="category_list.php">Category</a></li>
+										<li><a href="designations_list.php">Designation</a></li>
 										
 									</ul>
 								</li>

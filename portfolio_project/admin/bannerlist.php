@@ -97,7 +97,7 @@ include_once 'controller/dbconfig.php';
 							<td><?= $data['title'] ?></td>
 							<td><?= $data['sub_title'] ?></td>
 							<td><?= $data['details'] ?></td>
-							<td>
+							<td><?= $data['image'] ?>
 								<img width="30" height="30" src="<?='uploads/banner_image/'. $data['image'] ?>" alt="image no found">
 							</td>
 							<td class="text-center">

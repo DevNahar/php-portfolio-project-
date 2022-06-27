@@ -1,6 +1,9 @@
 
 	<!-- Main navbar -->
-	<?php include 'includes/mainNav.php' ?>
+	<?php 
+	session_start();
+	include_once 'controller/dbconfig.php';
+	include 'includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 
@@ -46,14 +49,28 @@
 						<form class="form-horizontal" action="controller/project_controller.php" method="POST" enctype="multipart/form-data">
 								<fieldset class="content-group">
 
-								
+								<?php								
+									
+									$get_data = "SELECT * FROM categories WHERE status = 1";
+									$get_data_result = mysqli_query($db_connect, $get_data);								
+									
+									?>
 
-									<!-- <div class="form-group">
-										<label class="control-label col-lg-2">category_id</label>
+									<div class="form-group">
+										<label class="control-label col-lg-2">Category Id</label>
 										<div class="col-lg-10">
-											<input type="text" class="form-control" name="title">
+										<select name="category_id" class="form-control">
+				                                <option value="">Select Categary</option>
+												<?php								
+													foreach($get_data_result as $data){
+												?>
+				                                <option value="<?= $data['id']?>"><?= $data['category_name']?></option>
+				                                <?php								
+													}
+												?>
+				                            </select>
 										</div>
-									</div> -->
+									</div>
 
 									<div class="form-group">
 										<label class="control-label col-lg-2">project_name</label>
@@ -65,7 +82,7 @@
                                     <div class="form-group">
 										<label class="control-label col-lg-2">project_link</label>
 										<div class="col-lg-10">
-										<input type="text" class="form-control" name="project_link">
+										<input type="url" class="form-control" name="project_link">
 										</div>
 									</div>
                                                                      

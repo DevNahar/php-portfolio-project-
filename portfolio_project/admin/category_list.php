@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -17,7 +18,7 @@ include_once 'controller/dbconfig.php';
 
 		<div class="breadcrumb-line">
 			<ul class="breadcrumb">
-				<li><a href="index.html"><i class=" icon-images3 position-left"></i> Project</a></li>
+				<li><a href="index.html"><i class=" icon-images3 position-left"></i> Category</a></li>
 				<li class="active">List</li>
 			</ul>
 		</div>
@@ -31,11 +32,11 @@ include_once 'controller/dbconfig.php';
 		<!-- Basic datatable -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
-				<h5 class="panel-title">Project List</h5>
+				<h5 class="panel-title">Category List</h5>
 				<div class="heading-elements">
 
 					<ul class="icons-list">
-						<li style="margin-right: 10px; color: #fff;"><a href="project_create.php" class="btn btn-primary add-new">Add New</a></li>
+						<li style="margin-right: 10px; color: #fff;"><a href="category_create.php" class="btn btn-primary add-new">Add New</a></li>
 						<li><a data-action="collapse"></a></li>
 						<li><a data-action="reload"></a></li>
 						<li><a data-action="close"></a></li>
@@ -67,7 +68,7 @@ include_once 'controller/dbconfig.php';
 			<!-- Data select -->
 
 			<?php
-			$select = "SELECT our_projects.* , categories.category_name  FROM our_projects INNER JOIN categories ON our_projects.category_id = categories.id  WHERE our_projects.active_status =1";
+			$select = "SELECT * FROM categories ";
 			$select_result = mysqli_query($db_connect, $select);
 			?>
 
@@ -76,10 +77,9 @@ include_once 'controller/dbconfig.php';
 
 					<tr>
 						<th>Sr.No</th>
-						<th>category_name</th>
-						<th>project_name</th>
-						<th>project_link</th>
-						<th>project_thumb</th>
+						<th>Category Name</th>
+						<th>Status</th>
+						
 						<th class="text-center">Actions</th>
 					</tr>
 
@@ -87,7 +87,6 @@ include_once 'controller/dbconfig.php';
 				<tbody>
 
 					<?php
-					if(!empty($select_result)){
 					foreach ($select_result as $key => $data) {
 
 
@@ -95,20 +94,17 @@ include_once 'controller/dbconfig.php';
 						<tr>
 							<td><?= ++$key ?></td>
 							<td><?= $data['category_name'] ?></td>
-							<td><?= $data['project_name'] ?></td>
-							<td><?= $data['project_link'] ?></td>
-							<td><?= $data['project_thumb'] ?>							
-								<img width="30" height="30" src="<?='uploads/project_image/'. $data['project_thumb'] ?>" alt="image no found">
-							</td>
+							<td><?= $data['status'] ?></td>
+							
 							<td class="text-center">
 
-								<a href="project_update.php?project_id=<?= $data['id'] ?>"><i class=" icon-pencil7 "></i></a>
-								<a href="project_delete.php?project_id=<?= $data['id'] ?>"><i style="margin-left: 10px;" class="  icon-trash "></i></a>
+								<a href="category_update.php?category_id=<?= $data['id'] ?>"><i class=" icon-pencil7 "></i></a>
+								<a href="category_delete.php?category_id=<?= $data['id'] ?>"><i style="margin-left: 10px;" class="  icon-trash "></i></a>
 
 							</td>
 						</tr>
 
-					<?php }} ?>
+					<?php } ?>
 
 				</tbody>
 			</table>

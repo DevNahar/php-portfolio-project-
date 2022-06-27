@@ -34,46 +34,47 @@
             echo "File not found";
         }
 
+        $category_id = $_POST['category_id'];
         $p_name = $_POST['project_name'];
         $p_link = $_POST['project_link'];
+        echo $catergary_id;
         
-        
-        if(empty($p_name) && empty($p_link)  && $img_upl_status == false){
+        if(empty($category_id)  && empty($p_name) && empty($p_link)  && $img_upl_status == false){
         $_SESSION['msg']  = "All fields are required";
 
         }else{
-            $insert = "INSERT INTO our_projects (project_name,project_link,project_thumb) VALUES ('{$p_name}','{$p_link}','{$random_file_name}' )";
+            $insert = "INSERT INTO our_projects (category_id,project_name,project_link,project_thumb) VALUES ('{$category_id}','{$p_name}','{$p_link}','{$random_file_name}' )";
             $insert_result = mysqli_query($db_connect, $insert); 
             $_SESSION['msg']  = "Data Insert Successfully";
         }
-        header('location: ../project_list.php');
+        header('location: ../project_create.php');
 	}
    
 
-  die();
+ 
     
     //This for update
 
     if(isset($_POST['update_project_submit'])){
 		
         $project_id = $_POST['id'];
-        $title = $_POST['title'];
-        $sub_title = $_POST['sub_title'];
-        $details = $_POST['details'];
+        $category_id = $_POST['category_id'];
+        $project_name = $_POST['project_name'];
+        $project_link = $_POST['project_link'];       
         $image = $_POST['image'];
         echo $id .$title.$sub_title.$details;
        
         
         
-        if(empty($title) && empty($sub_title) && empty($details)){
+        if(empty($category_id) && empty($project_name) && empty($project_link) && $img_upl_status == false){
         $_SESSION['msg']  = "All fields are required";
 
         }else{
-            $update = "UPDATE projects SET title = '{$title}',sub_title = '{$sub_title}', details = '{$details}'  WHERE id = '$project_id'";
+            $update = "UPDATE our_projects SET category_id = '{$category_id}',project_name = '{$project_name}', project_link = '{$project_link}'  WHERE id = '$project_id'";
             $update_result = mysqli_query($db_connect, $update); 
             // $_SESSION['msg']  = "Data Update Successfully";
         }
-        header('location: ../projectlist.php');
+        header('location: ../project_list.php');
         // header('location: ../projectupdate.php?project_id=$project_id');
 	}
 

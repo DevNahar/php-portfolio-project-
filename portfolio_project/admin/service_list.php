@@ -100,22 +100,25 @@ include_once 'controller/dbconfig.php';
 
 					?>
 						<tr>
-							<td><?= ++$key ?></td>
-							<td><?= $data['service_name'] ?></td>
-							<td><?= $data['service_details'] ?></td>
-							<td><?= $data['icon_name'] ?></td>
+							<td width="10%"><?= ++$key ?></td>
+							<td width="20%"><?= $data['service_name'] ?></td>
+							<td width="30%"><?= $data['service_details'] ?></td>
+							<td width="20%"><?= $data['icon_name'] ?></td>
 							
-							<td class="text-center">
+							<td class="text-center" width="20%">
 
 								<a href="service_update.php?service_id=<?= $data['id'] ?>"><i class=" icon-pencil7 "></i></a>
 								<a href="service_delete.php?service_id=<?= $data['id'] ?>"><i style="margin-left: 10px;" class="  icon-trash "></i></a>
 
 							</td>
+	
+
 						</tr>
 
 					<?php } ?>
 
 				</tbody>
+	
 			</table>
 		</div>
 		<!-- /basic datatable -->
