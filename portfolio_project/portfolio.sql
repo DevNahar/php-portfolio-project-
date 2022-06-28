@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2022 at 03:48 PM
+-- Generation Time: Jun 28, 2022 at 04:18 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -43,7 +43,7 @@ CREATE TABLE `banners` (
 INSERT INTO `banners` (`id`, `title`, `sub_title`, `details`, `image`, `status`) VALUES
 (23, 'Deserunt eum sunt mi', 'Aut aut quia culpa s', 'Iste non mollitia no', 'tax.jpg', 1),
 (25, 'Eum et officia tempo', 'Velit rerum dolor ve', 'Doloremque consequat', 'Nafim pic.jpg', 1),
-(28, 'Eius esse omnis ea ', 'Cupiditate molestias', 'Est enim ullamco vo', '1656133070.png', 1),
+(28, 'Eius', 'Cupiditate ', 'Est enim ', '1656133070.png', 1),
 (29, 'Veniam voluptatem u', 'Magnam nulla ducimus', 'Rem quis obcaecati c', '1656185222.png', 1),
 (30, 'Dolorum nulla rerum ', 'Corrupti qui veniam', 'Perspiciatis sapien', '1656185560.jpg', 1);
 
@@ -132,6 +132,17 @@ CREATE TABLE `our_clients` (
   `active_status` tinyint(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `our_clients`
+--
+
+INSERT INTO `our_clients` (`id`, `clients_name`, `designation_id`, `client_image`, `client_review`, `active_status`) VALUES
+(1, 'Regina Sears', 5, '1656421371.jpg', 'Voluptas qui consequ', 1),
+(2, 'Regina Sears', 5, '1656421491.jpg', 'Voluptas qui consequ', 1),
+(3, 'Moana Hutchinson', 5, '1656421714.png', 'In nemo minima exerc', 1),
+(5, 'Callum Cash', 4, '1656422288.png', 'Impedit atque quo s', 1),
+(6, 'Lani Nash', 4, '1656425495.jpg', 'Temporibus voluptate', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -168,10 +179,18 @@ CREATE TABLE `our_staff` (
   `staff_image` varchar(30) NOT NULL,
   `twitter` text NOT NULL,
   `facebook` text NOT NULL,
-  `likedin` text NOT NULL,
+  `linkedin` text NOT NULL,
   `instagram` text NOT NULL,
   `active_status` tinyint(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `our_staff`
+--
+
+INSERT INTO `our_staff` (`id`, `staff_name`, `designation_id`, `staff_image`, `twitter`, `facebook`, `linkedin`, `instagram`, `active_status`) VALUES
+(5, 'Matthew Ray', 4, '1656400855.png', 'Autem illo reprehend', 'Libero enim obcaecat', 'Recusandae Id dele', 'Sit aut incidunt bl', 1),
+(6, 'Ann Hill', 5, '1656411489.jpg', 'Ex quia repellendus', 'Et dolore nesciunt ', 'Elit sit non quaer', 'Nostrum fugiat excep', 1);
 
 -- --------------------------------------------------------
 
@@ -290,7 +309,7 @@ ALTER TABLE `designations`
 -- AUTO_INCREMENT for table `our_clients`
 --
 ALTER TABLE `our_clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `our_projects`
@@ -302,7 +321,7 @@ ALTER TABLE `our_projects`
 -- AUTO_INCREMENT for table `our_staff`
 --
 ALTER TABLE `our_staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `services`
