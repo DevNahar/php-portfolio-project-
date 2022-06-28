@@ -15,7 +15,7 @@
 
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
-							<li><a href="banner.php"><i class="icon-menu2 position-left"></i> Banner</a></li>
+							<li><a href="banner.php"><i class="icon-menu2 position-left"></i> Staff</a></li>
 							<li class="active">List</li>
 						</ul>
 
@@ -31,7 +31,7 @@
 					<!-- Basic datatable -->
 					<div class="panel panel-flat">
 						<div class="panel-heading">
-							<h5 class="panel-title">Banner List</h5>
+							<h5 class="panel-title">Staff List</h5>
 							<div class="heading-elements">
 								<ul class="icons-list">
 									<li><a href="staff_create.php" class="btn btn-primary add_new">Add New</a></li>
@@ -74,25 +74,25 @@
 							<tbody>
 
 							<?php 
-							$SelectQry = "SELECT our_staff.*, designations.designation_name FROM our_staff INNER JOIN  designations ON our_staff.designation_id =designations.id WHERE our_staff.active_status = 1" ;
-							$staffList = mysqli_query($db_connect, $SelectQry);
+							$Select = "SELECT our_staff.*, designations.designation_name FROM our_staff INNER JOIN  designations ON our_staff.designation_id =designations.id WHERE our_staff.active_status = 1" ;
+							$staffList = mysqli_query($db_connect, $Select);
 							if(!empty($staffList)){
 							foreach ($staffList as $key => $staff) {
 								
 						 
 						     	?>
 								<tr>
-									<td> <?php echo ++$key; ?> </td>
-									<td> <?php echo $staff['staff_name']; ?> </td>
-									<td> <?php echo $staff['designation_name']; ?> </td>
-									<td> <img  width="80" height="80" src="<?php echo '../uploads/bannerImages/'.$staff['staff_image']; ?>"/> </td>
+									<td> <?= ++$key; ?> </td>
+									<td> <?= $staff['staff_name']; ?> </td>
+									<td> <?= $staff['designation_name']; ?> </td>
+									<td> <img  width="80" height="80" src="<?php echo 'uploads/project_image/'.$staff['staff_image']; ?>"/> </td>
 									<td> <?php echo $staff['twitter']; ?> </td>
-									<td> <?php echo $staff['facebook']; ?> </td>
-									<td> <?php echo $staff['linkedin']; ?> </td>
-									<td> <?php echo $staff['instagram']; ?> </td>
+									<td> <?= $staff['facebook']; ?> </td>
+									<td> <?= $staff['linkedin']; ?> </td>
+									<td> <?= $staff['instagram']; ?> </td>
 									<td class="text-center">
-							  <a href="staff_pdate.php?id=<?php echo $staff['id']; ?>" class="ml-2 mr-2"><i class="icon-pencil5"></i></a>
-							  <a href="staff_delete.php?id=<?php echo $staff['id']; ?>" class="ml-2 mr-2"><i class=" icon-trash"></i></a>
+							  <a href="staff_update.php?id=<?= $staff['id']; ?>" class="ml-2 mr-2"><i class="icon-pencil5"></i></a>
+							  <a href="staff_delete.php?id=<?= $staff['id']; ?>" class="ml-2 mr-2"><i class=" icon-trash"></i></a>
 									</td>
 								</tr>
 							<?php	}} ?>

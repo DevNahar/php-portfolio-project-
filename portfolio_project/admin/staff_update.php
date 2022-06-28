@@ -32,9 +32,9 @@
 				<div class="content">
 				 <!-- this code for fethc data -->
 				 <?php
-				 require "../controller/dbConfigue.php";
-				 $dataId = $_GET['id'];
-				 $staff_select = "SELECT * FROM our_staff WHERE id = {$dataId} ";
+				 
+				 $staff_id = $_GET['id'];
+				 $staff_select = "SELECT * FROM our_staff WHERE id = {$staff_id} ";
 				 $staff_select_result = mysqli_query($db_connect, $staff_select);
 				 
 				 ?>
@@ -71,15 +71,15 @@
 
 
 								<?php 
-
+								if(!empty($staff_select_result)){
 								foreach ($staff_select_result as $key => $staff) {
             
 								  ?>
                                      <div class="form-group">
-										<input name="staff_id" type="hidden" value="<?php echo $staff['id'] ?>">
+										<input name="staff_id" type="hidden" value="<?= $staff['id'] ?>">
 										<label class="control-label col-lg-2" for="staff_name"  >Staff Name</label>
 										<div class="col-lg-10">
-											<input id="staff_name" value="<?php echo $staff['staff_name'] ?>" name="staff_name" type="text" class="form-control">
+											<input id="staff_name" value="<?= $staff['staff_name'] ?>" name="staff_name" type="text" class="form-control">
 										</div>
 									</div>	
 									
@@ -112,35 +112,35 @@
 									<div class="form-group">
 										<label class="control-label col-lg-2" for="staff_image">Staff Image</label>
 										<div class="col-lg-10">
-										<input id="staff_image" value="<?php echo $staff['staff_image'] ?>" name="staff_image" type="file" class="form-control">
+										<input id="staff_image" value="<img width='30' height='30' src='<?='uploads/project_image/'. $staff['staff_image'] ?>'">
 									</div>
 									</div>
 									<div class="form-group">
 										<label class="control-label col-lg-2" for="twitter"  >Twitter</label>
 										<div class="col-lg-10">
-											<input id="twitter" value="<?php echo $staff['twitter'] ?>" name="twitter" type="text" class="form-control">
+											<input id="twitter" value="<?= $staff['twitter'] ?>" name="twitter" type="text" class="form-control">
 										</div>
 									</div> 
 									<div class="form-group">
 										<label class="control-label col-lg-2" for="facebook"  >Facebook</label>
 										<div class="col-lg-10">
-											<input id="facebook" value="<?php echo $staff['facebook'] ?>" name="facebook" type="text" class="form-control">
+											<input id="facebook" value="<?= $staff['facebook'] ?>" name="facebook" type="text" class="form-control">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="control-label col-lg-2" for="linkedin"  >Linkdein</label>
 										<div class="col-lg-10">
-											<input id="linkedin" value="<?php echo $staff['linkedin'] ?>" name="linkedin" type="text" class="form-control">
+											<input id="linkedin" value="<?= $staff['linkedin'] ?>" name="linkedin" type="text" class="form-control">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="control-label col-lg-2" for="instagram"  >Instagram</label>
 										<div class="col-lg-10">
-											<input id="instagram" value="<?php echo $staff['instagram'] ?>" name="instagram" type="text" class="form-control">
+											<input id="instagram" value="<?= $staff['instagram'] ?>" name="instagram" type="text" class="form-control">
 										</div>
 									</div>
 
-									<?php } ?>
+									<?php }} ?>
 								</fieldset>
 
 								<div class="text-right">

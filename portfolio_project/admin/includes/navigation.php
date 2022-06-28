@@ -16,7 +16,7 @@
 								</li>
 								<li ><a href="staff_list.php"><i class="icon-users2"></i> <span>Our Staff</span></a>
 								</li>
-								<li ><a href="client_list.php"><i class=" icon-users4"></i> <span>Our clients</span></a>
+								<li ><a href="clients_list.php"><i class=" icon-users4"></i> <span>Our clients</span></a>
 								</li>
 								<li ><a href="contact.php"><i class=" icon-floppy-disk"></i> <span>Contact Message</span></a>
 								</li>

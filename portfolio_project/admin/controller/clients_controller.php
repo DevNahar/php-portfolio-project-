@@ -1,101 +1,92 @@
 <?php 
-// database connection Qury
-  require 'dbConfigue.php';
-// this is for client Create 
-if (isset($_POST['CreateData'])) {
+ session_start();
+ require 'dbconfig.php';
+
+   //This for insert
+if (isset($_POST['clients_submit'])) {
 
 
-    // for image 
-    if(isset($_FILES['client_image'])){
-      $uploadStatus = false;
-      //storage the main super global variable in mainarrimg
-      $mainArrImg = $_FILES['client_image'];
-      // file name
-      $file_name = $mainArrImg['name'];
-      // file temp path name
-      $file_temp_name = $mainArrImg['tmp_name'];
-      //file file_size
-      $file_size = $mainArrImg['size'];
+  $img_upl_status = false;
+       
+        if(isset($_FILES['image'])){
+            $image_details =$_FILES['image'];
 
-      // extract the file extentions 
-      $file_Arr = explode('.', $file_name);
-      // get the file extention just 
-      $file_extention = strtolower(end($file_Arr));
-      // valid file extentions
-      $valid_file_extention =['png', 'jpeg', 'jpg'];
-      // random file name generated here
-      $random_file_name = time().'.'.$file_extention;
+            $file_name = $image_details['name'];
+            $file_tmp_name = $image_details['tmp_name'];
+            $file_size = $image_details['size'];
 
-      // condition for valid extetion and upload files
-      if (in_array($file_extention, $valid_file_extention)) {
-          move_uploaded_file($file_temp_name, '../uploads/clients/' .$random_file_name);
-          $uploadStatus = true;
-      } else {
-         $massage = $file_extention.' is Not Supported';
-      }
-      $massage = "File Not Found";    
-    
-    }
+            $name_xp_array = explode('.',$file_name);
+            $file_extention = strtolower(end($name_xp_array));
+            $valid_extention = array('jpg','png','jpeg');
+            $random_file_name = time(). '.' . $file_extention;
+            if(in_array($file_extention,$valid_extention)){
+                if($file_size < 3000000){
+                    $move_file = move_uploaded_file($file_tmp_name,'../uploads/client_image/'.$random_file_name);
+                    $img_upl_status = true;
+                }else{
+                    echo "file size too large";
+                }
+            }else{
+                echo $file_extention . "file is not supported";
+            }
+            
+            
+        }else{
+            echo "File not found";
+        }
 
         $clients_name   = $_POST['clients_name'];
         $designation_id = $_POST['designation_id'];
-        $client_image   = $_POST['client_image'];
+        $client_image   = $_POST['image'];
         $client_review  = $_POST['client_review'];
 
- if ( empty($clients_name) ||  empty($designation_id)  || empty($client_review) ||   $uploadStatus== false   ) {
-    $massage = "All Field is Required";
-    $alertCls = "alert-danger";
+ if ( empty($clients_name) ||  empty($designation_id)  || empty($client_review) ||   $img_upl_status== false   ) {
+  $_SESSION['msg']  = "All fields are required";
  } else {
-   $isertQry = "INSERT INTO our_clients (clients_name,designation_id,client_image,client_review) VALUES ('{$clients_name}', '{$designation_id}', '{$random_file_name}', '{$client_review}' ) ";
-   $clientInsert = mysqli_query($conn, $isertQry)  ;
+   $insert_query = "INSERT INTO our_clients (clients_name,designation_id,client_image,client_review) VALUES ('{$clients_name}', '{$designation_id}', '{$random_file_name}', '{$client_review}' ) ";
+   $insert_query_result = mysqli_query($db_connect, $insert_query)  ;
 
-   if ($clientInsert) {
-    $massage = "Insert Successfully";
-    $alertCls = "alert-success";
+   if ($insert_query_result) {
+    $_SESSION['msg']  = "Data Insert Successfully";
    } else {
-    $massage = "Insert Failed";
-    $alertCls = "alert-danger";
+    $_SESSION['msg']  = "Data Insert Failed";
    }
    
  }
-//  Redirection
-header ("location: ../our_clients/ourClientsCreate.php?msg={$massage}&acls={$alertCls} ");
+
+header ("location: ../clients_create.php ");
 
 }
 
-
-// this is for client update
-if (isset($_POST['UpdateData'])) {
-  
-
-
-      
+// this for client update
+if (isset($_POST['clients_update'])) {
+        
         $client_id      = $_POST['client_id'];
         $clients_name   = $_POST['clients_name'];
         $designation_id = $_POST['designation_id'];
-        $client_image   = $_POST['client_image'];
+        $client_image   = $_POST['image'];
         $client_review  = $_POST['client_review'];
 
  if ( empty($clients_name) || empty($designation_id) || empty($client_review)   ) {
-    $massage = "All Field is Required";
-    $alertCls = "alert-danger";
+  $_SESSION['msg']  = "All fields are required";
  } else {
-    $banerUpdateQry = "UPDATE our_clients SET clients_name='{$clients_name}',designation_id='{$designation_id}',client_image='{$client_image}',client_review='{$client_review}' WHERE id = '{$client_id}' ";
+    $clients_q = "UPDATE our_clients SET clients_name='{$clients_name}',designation_id='{$designation_id}',client_image='{$client_image}',client_review='{$client_review}' WHERE id = '{$client_id}' ";
 
-   $clientInsert = mysqli_query($conn, $banerUpdateQry)  ;
+   $clientInsert = mysqli_query($db_connect, $clients_q)  ;
+
 
    if ($clientInsert) {
-    $massage = "Insert Successfully";
-    $alertCls = "alert-success";
+    $_SESSION['msg']  = "Data Insert Successfully";
    } else {
-    $massage = "Insert Failed";
-    $alertCls = "alert-danger";
+    $_SESSION['msg']  = "Data Insert Failed";
    }
+   
+ 
    
  }
 
 //  Redirection
-header ("location: ../our_clients/ourClientsUpdate.php?msg={$massage}&acls={$alertCls}&id={$client_id } ");
+header ("location: ../clients_list.php ");
 
 }
 

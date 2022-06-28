@@ -32,10 +32,10 @@
 				<div class="content">
 				 <!-- this code for fethc data -->
 				 <?php
-				 require "../controller/dbConfigue.php";
-				 $dataId = $_GET['id'];
-				 $ourClientsDataQry = "SELECT * FROM our_clients WHERE id = {$dataId} ";
-				 $ourClientsResult = mysqli_query($conn, $ourClientsDataQry);
+				
+				 $client_id = $_GET['id'];
+				 $ourClientsDataQry = "SELECT * FROM our_clients WHERE id = {$client_id} ";
+				 $ourClientsResult = mysqli_query($db_connect, $ourClientsDataQry);
 				 
 				 ?>
 					<!-- Basic datatable -->
@@ -60,12 +60,12 @@
 						</div>
 				    	<?php } ?>
 						<div class="panel-body form_list_panel">
-						<form class="form-horizontal" action="../controller/clientsController.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="controller/clients_controller.php" method="post" enctype="multipart/form-data">
 								<fieldset class="content-group">
 
 
 								<?php 
-
+								if(!empty($ourClientsResult)){
 								foreach ($ourClientsResult as $key => $ourClientsResult) {
             
 								  ?>
@@ -79,9 +79,9 @@
 									</div>		
 
 									<?php
-									require '../controller/dbConfigue.php';
+									
 									$designationsSQL = "SELECT * FROM designations WHERE active_status = 1";
-									$designationsResult = mysqli_query($conn, $designationsSQL) ;
+									$designationsResult = mysqli_query($db_connect, $designationsSQL) ;
 					
 									
 									?>
@@ -108,11 +108,17 @@
 				                            </select>
 			                            </div>
 			                        </div>	
-									<div class="form-group">
-										<label class="control-label col-lg-2" for="client_image">Clients Image</label>
-										<div class="col-lg-10">
-										<input id="client_image" value="<?php echo $ourClientsResult['client_image']  ?>" name="client_image" type="file" class="form-control">
-									</div>
+									
+
+									
+										<div class="form-group">
+                                            <label class="control-label col-lg-2">Clients Image</label>
+                                            <div class="col-lg-10">
+                                            <input type="file" class="form-control" name="image" value="<?= $ourClientsResult['client_image']?>">
+                                            
+                                            </div>
+                                        </div>
+
 									<div class="form-group ">
 										<label class="control-label col-lg-2" for="client_review"  >Clients Review</label>
 										<div class="col-lg-10">						
@@ -120,12 +126,12 @@
 										</div>
 									</div>
 
-									<?php } ?>
+									<?php } }?>
 								</fieldset>
 
 								<div class="text-right">
-									<button type="submit" name="UpdateData" class="btn btn-primary">Update <i class="icon-arrow-right14 position-right"></i></button>
-									<a href="ourClientsList.php"class="btn btn-warning">Back To Clients List</i></a>
+									<button type="submit" name="clients_update" class="btn btn-primary">Update <i class="icon-arrow-right14 position-right"></i></button>
+									<a href="clients_list.php"class="btn btn-warning">Back To Clients List</i></a>
 								</div>
 							</form>
 

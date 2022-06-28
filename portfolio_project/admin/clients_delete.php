@@ -1,27 +1,23 @@
 <?php
 
-require "../controller/dbConfigue.php";
-// this is for data update
+session_start();
+ include 'controller/dbconfig.php';
       
 $clients_id = $_GET['id'];
 
-$clientsDeletedQry = "UPDATE our_clients SET active_status=0 WHERE id = '{$clients_id}' ";
+$clients_query = "DELETE FROM our_clients  WHERE id = '{$clients_id}' ";
 
-$bannerInsert = mysqli_query($conn, $clientsDeletedQry)  ;
+$clients_query_result = mysqli_query($db_connect, $clients_query)  ;
 
-if ($bannerInsert) {
-$massage = "Deleted Successfully";
-$alertCls = "alert-success";
+if ($clients_query_result) {
+    $_SESSION['msg']  = "Data Delete Successfully";
 
-} else {
-$massage = "Deleted Failed";
-$alertCls = "alert-danger";
-}
+} 
 
 
 
 //  Redirection
-header ("location: ../our_clients/ourClientsLIst.php?msg={$massage}&acls={$alertCls} ");
+header ("location: clients_list.php ");
 
 
 

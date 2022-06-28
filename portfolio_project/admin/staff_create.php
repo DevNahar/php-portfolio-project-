@@ -35,7 +35,7 @@
 							<h5 class="panel-title">Staff List</h5>
 							<div class="heading-elements">
 								<ul class="icons-list">
-									<li><a href="ourStaffCreate.php" class="btn btn-primary add_new">Add New</a></li>
+									<li><a href="staff_create.php" class="btn btn-primary add_new">Add New</a></li>
 			                		<li><a data-action="collapse"></a></li>
 			                		<li><a data-action="reload"></a></li>
 			                		<li><a data-action="close"></a></li>
@@ -57,7 +57,7 @@
 
 			<!-- alert massege -->
 						<div class="panel-body form_list_panel">
-						<form class="form-horizontal" action="controller/staf_controller.php" method="post" enctype="multipart/form-data"  >
+						<form class="form-horizontal" action="controller/staff_controller.php" method="post" enctype="multipart/form-data"  >
 								<fieldset class="content-group">
 
 									<div class="form-group">
@@ -92,11 +92,15 @@
 				                            </select>
 			                            </div>
 			                        </div>	
+									
+
 									<div class="form-group">
-										<label class="control-label col-lg-2" for="staff_image">Staff Image</label>
-										<div class="col-lg-10">
-										<input id="staff_image" name="staff_image" type="file" class="form-control">
-									</div>
+										<label class="control-label col-lg-2" for="Staff_image">Staff_image</label>
+										<div class="col-lg-10">										
+										<input type="file" id="Staff_image" class="form-control" name="image">
+										</div>
+									</div>		
+
 									<div class="form-group">
 										<label class="control-label col-lg-2" for="twitter"  >Twitter</label>
 										<div class="col-lg-10">
