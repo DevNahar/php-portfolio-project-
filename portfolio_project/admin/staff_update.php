@@ -66,7 +66,7 @@
 
 			<!-- alert massege -->
 						<div class="panel-body form_list_panel">
-						<form class="form-horizontal" action="controller/staff_controller.php" method="post">
+						<form class="form-horizontal" action="controller/staff_controller.php" method="post" enctype="multipart/form-data">
 								<fieldset class="content-group">
 
 
@@ -112,7 +112,7 @@
 									<div class="form-group">
 										<label class="control-label col-lg-2" for="staff_image">Staff Image</label>
 										<div class="col-lg-10">
-										<input id="staff_image" value="<img width='30' height='30' src='<?='uploads/project_image/'. $staff['staff_image'] ?>'">
+										<input type="file" class="form-control" name="image" value="<?= $staff['staff_image']?>">
 									</div>
 									</div>
 									<div class="form-group">

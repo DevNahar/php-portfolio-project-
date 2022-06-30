@@ -21,7 +21,7 @@ if (isset($_POST['clients_submit'])) {
             $random_file_name = time(). '.' . $file_extention;
             if(in_array($file_extention,$valid_extention)){
                 if($file_size < 3000000){
-                    $move_file = move_uploaded_file($file_tmp_name,'../uploads/client_image/'.$random_file_name);
+                    $move_file = move_uploaded_file($file_tmp_name,'../uploads/clients_image/'.$random_file_name);
                     $img_upl_status = true;
                 }else{
                     echo "file size too large";
