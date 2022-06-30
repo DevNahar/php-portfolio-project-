@@ -10,15 +10,15 @@
 								</li>
 								<li ><a href="service_list.php"><i class="icon-clipboard3"></i> <span>services</span></a>
 								</li>
-								<li><a href="section_list.php"><i class=" icon-stats-decline2"></i> <span>Sections</span></a>
-								</li>
+								<!-- <li><a href="section_list.php"><i class=" icon-stats-decline2"></i> <span>Sections</span></a>
+								</li> -->
 								<li><a href="project_list.php"><i class="icon-stack-star"></i> <span>Our Projects</span></a>
 								</li>
 								<li ><a href="staff_list.php"><i class="icon-users2"></i> <span>Our Staff</span></a>
 								</li>
 								<li ><a href="clients_list.php"><i class=" icon-users4"></i> <span>Our clients</span></a>
 								</li>
-								<li ><a href="contact.php"><i class=" icon-floppy-disk"></i> <span>Contact Message</span></a>
+								<li ><a href="contact_list.php"><i class=" icon-floppy-disk"></i> <span>Contact Us</span></a>
 								</li>
 
 								<li>
@@ -28,22 +28,9 @@
 										<li><a href="designations_list.php">Designation</a></li>
 										
 									</ul>
-								</li>
+								</li>								
+							
 								
-								<li>
-									<a href="#"><i class="icon-stack"></i> <span>Starter kit</span></a>
-									<ul>
-																				
-										<li>
-											<a href="#">3 columns</a>
-											<ul>
-												<li><a href="starters/3_col_dual.html">Dual sidebars</a></li>
-												<li><a href="starters/3_col_double.html">Double sidebars</a></li>
-											</ul>
-										</li>					
-										
-									</ul>
-								</li>
 								
 								<!-- /main -->
 
