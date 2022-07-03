@@ -59,8 +59,8 @@ if (isset($_POST['Staff_submit'])) {
 
 
 // this  for update
-if (isset($_POST['staff_update'])) {
-
+if (isset($_POST['staff_update'])) {    
+   
     $img_upd_status = false;
 
     if (isset($_FILES['image'])) {
@@ -91,23 +91,23 @@ if (isset($_POST['staff_update'])) {
     $staff_id    = $_POST['staff_id'];
     $staff_name     = $_POST['staff_name'];
     $designation_id = $_POST['designation_id'];
-    $staff_image    = $up_random_file_name;
+    
     $twitter        = $_POST['twitter'];
     $facebook       = $_POST['facebook'];
     $linkedin       = $_POST['linkedin'];
     $instagram      = $_POST['instagram'];
 
-    if (empty($staff_name) || empty($designation_id) || empty($twitter) || empty($facebook) || empty($linkedin) || empty($instagram)) {
+    if (empty($staff_name) && empty($designation_id)  && empty($twitter) && empty($random_file_name) && empty($facebook) && empty($linkedin) && empty($instagram) && $img_upd_status == false) {
         $_SESSION['msg']  = "All fields are required";
     } else {
-        $update_query = "UPDATE our_staff SET staff_name='{$staff_name}',designation_id='{$designation_id}',staff_image='{$staff_image}',twitter='{$twitter}',facebook='{$facebook}',linkedin='{$linkedin}',instagram='{$instagram}' WHERE id = '{$staff_id}' ";
+        $update_query = "UPDATE our_staff SET staff_name='{$staff_name}',designation_id='{$designation_id}',staff_image='{$up_random_file_name}',twitter='{$twitter}',facebook='{$facebook}',linkedin='{$linkedin}',instagram='{$instagram}' WHERE id = '{$staff_id}' ";
 
         $update_query_result = mysqli_query($db_connect, $update_query);
 
         if ($update_query_result) {
-            $_SESSION['msg']  = "Data Insert Successfully";
+            $_SESSION['msg']  = "Data update Successfully";
         } else {
-            $_SESSION['msg']  = "Data Insert Failed";
+            $_SESSION['msg']  = "Data update Failed";
         }
     }
 
