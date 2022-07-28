@@ -1,8 +1,8 @@
 	<!-- Main navbar -->
 	<?php 
 	session_start();
-	include_once 'controller/dbconfig.php';
-	include 'includes/mainNav.php' ?>
+	include_once '../controller/dbconfig.php';
+	include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 

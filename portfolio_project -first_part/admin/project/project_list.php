@@ -98,7 +98,7 @@ include_once '../controller/dbconfig.php';
 							<td><?= $data['project_name'] ?></td>
 							<td><?= $data['project_link'] ?></td>
 							<td><?= $data['project_thumb'] ?>							
-								<img width="30" height="30" src="<?='uploads/project_image/'. $data['project_thumb'] ?>" alt="image no found">
+								<img width="30" height="30" src="<?='../uploads/project_image/'. $data['project_thumb'] ?>" alt="image no found">
 							</td>
 							<td class="text-center">
 

@@ -1,8 +1,8 @@
 	<!-- Main navbar -->
 	<?php 
 	session_start();
-	include_once 'controller/dbconfig.php';
-	include 'includes/mainNav.php' ?>
+	include_once '../controller/dbconfig.php';
+	include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 
@@ -85,7 +85,7 @@
 									<td> <?= ++$key; ?> </td>
 									<td> <?= $staff['staff_name']; ?> </td>
 									<td> <?= $staff['designation_name']; ?> </td>
-									<td> <img  width="80" height="80" src="<?php echo 'uploads/project_image/'.$staff['staff_image']; ?>"/> </td>
+									<td> <img  width="80" height="80" src="<?php echo '../uploads/project_image/'.$staff['staff_image']; ?>"/> </td>
 									<td> <?php echo $staff['twitter']; ?> </td>
 									<td> <?= $staff['facebook']; ?> </td>
 									<td> <?= $staff['linkedin']; ?> </td>

@@ -1,6 +1,6 @@
 <?php
  session_start();
- include 'controller/dbconfig.php';
+ include '../controller/dbconfig.php';
       
 $staff_id = $_GET['id'];
 

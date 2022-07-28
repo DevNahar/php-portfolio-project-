@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'controller/dbconfig.php';
+include '../controller/dbconfig.php';
 
 
 // this  for Delete

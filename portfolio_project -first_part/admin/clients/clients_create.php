@@ -1,9 +1,10 @@
 	<!-- Main navbar -->
 	<?php 
 	session_start();
-	include_once 'controller/dbconfig.php';
-	include 'includes/mainNav.php' ?>
+	include_once '../controller/dbconfig.php';
+	include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
+
 
 
 			<!-- Main content -->
@@ -15,9 +16,9 @@
 
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
-							<li><a href="banner.php"><i class="icon-menu2 position-left"></i> Staff</a></li>
+							<li><a href="banner.php"><i class="icon-menu2 position-left"></i> Clients</a></li>
 							<li class="">List</li>
-							<li class="active">Staff Create</li>
+							<li class="active">Clients Create</li>
 						</ul>
 
 
@@ -32,10 +33,10 @@
 					<!-- Basic datatable -->
 					<div class="panel panel-flat">
 						<div class="panel-heading mb-5" >
-							<h5 class="panel-title">Staff List</h5>
+							<h5 class="panel-title">Create Clients </h5>
 							<div class="heading-elements">
 								<ul class="icons-list">
-									<li><a href="staff_create.php" class="btn btn-primary add_new">Add New</a></li>
+									
 			                		<li><a data-action="collapse"></a></li>
 			                		<li><a data-action="reload"></a></li>
 			                		<li><a data-action="close"></a></li>
@@ -56,14 +57,15 @@
 			} ?>
 
 			<!-- alert massege -->
+
 						<div class="panel-body form_list_panel">
-						<form class="form-horizontal" action="controller/staff_controller.php" method="post" enctype="multipart/form-data"  >
+						<form class="form-horizontal" action="controller/clients_controller.php" method="post" enctype="multipart/form-data"   >
 								<fieldset class="content-group">
 
 									<div class="form-group">
-										<label class="control-label col-lg-2" for="staff_name"  >Staff Name</label>
+										<label class="control-label col-lg-2" for="clients_name"  >Clients Name</label>
 										<div class="col-lg-10">
-											<input id="staff_name" name="staff_name" type="text" class="form-control">
+											<input id="clients_name" name="clients_name" type="text" class="form-control">
 										</div>
 									</div>		
 
@@ -75,61 +77,41 @@
 									
 									?>
 									<div class="form-group">
-			                        	<label for="designation_id" class="control-label col-lg-2">Designation</label>
+			                        	<label for="designation_id" class="control-label col-lg-2"> select Designation</label>
 			                        	<div class="col-lg-10">
 				                            <select id="designation_id" name="designation_id" class="form-control">
 				                                <option value=""> select Designation</option>
 									   <?php 
 
-									  foreach ($dg_query_result as $designation){?>
-										<option value="<?= $designation['id']?>"><?= $designation['designation_name']?></option>;
+									  foreach ($dg_query_result as $designation){
+										echo "<option value='{$designation['id']}'>{$designation['designation_name']}</option>";
 
-										<?php								
-											}
-										?>					  
+									  }
+								     	?>
 
 					
 				                            </select>
 			                            </div>
 			                        </div>	
-									
-
+								
 									<div class="form-group">
-										<label class="control-label col-lg-2" for="Staff_image">Staff_image</label>
+										<label class="control-label col-lg-2" for="client_image">client_image</label>
 										<div class="col-lg-10">										
-										<input type="file" id="Staff_image" class="form-control" name="image">
+										<input type="file" id="client_image" class="form-control" name="image">
 										</div>
-									</div>		
+									</div>
+									<div class="form-group ">
+										<label class="control-label col-lg-2" for="client_review"  >Clients Review</label>
+										<div class="col-lg-10">						
+											<textarea id="client_review" name="client_review" rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
+										</div>
+									</div>
 
-									<div class="form-group">
-										<label class="control-label col-lg-2" for="twitter"  >Twitter</label>
-										<div class="col-lg-10">
-											<input id="twitter" name="twitter" type="text" class="form-control">
-										</div>
-									</div> 
-									<div class="form-group">
-										<label class="control-label col-lg-2" for="facebook"  >Facebook</label>
-										<div class="col-lg-10">
-											<input id="facebook" name="facebook" type="text" class="form-control">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-lg-2" for="linkedin"  >Linkdein</label>
-										<div class="col-lg-10">
-											<input id="linkedin" name="linkedin" type="text" class="form-control">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-lg-2" for="instagram"  >Instagram</label>
-										<div class="col-lg-10">
-											<input id="instagram" name="instagram" type="text" class="form-control">
-										</div>
-									</div>
 								</fieldset>
 
 								<div class="text-right">
-									<button type="submit" name="Staff_submit" class="btn btn-primary">Submit <i class="icon-arrow-right14 position-right"></i></button>
-									<a href="staff_list.php"class="btn btn-warning">Back To Staff List</i></a>
+									<button type="submit" name="clients_submit" class="btn btn-primary">Submit <i class="icon-arrow-right14 position-right"></i></button>
+									<a href="clients_list.php"class="btn btn-warning">Back To Clients List</i></a>
 								</div>
 							</form>
 
@@ -154,7 +136,12 @@
 			</div>
 			<!-- /main content -->
 
-		
+	
+
+
+
+
+
 <!-- footer -->
 <?php include '../includes/script.php'?>
 <!-- footer -->

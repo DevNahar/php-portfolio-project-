@@ -1,6 +1,6 @@
 <?php
  session_start();
-include 'controller/dbconfig.php';
+include '../controller/dbconfig.php';
 
 $category_id = $_GET['category_id'];
 $bner_data_dlt = "DELETE FROM categories WHERE id = $category_id ";

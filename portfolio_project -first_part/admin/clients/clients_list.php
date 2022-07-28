@@ -1,8 +1,8 @@
 	<!-- Main navbar -->
 	<?php
 	session_start();
-	include_once 'controller/dbconfig.php';
-	include 'includes/mainNav.php' ?>
+	include_once '../controller/dbconfig.php';
+	include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 
@@ -82,7 +82,7 @@
 									<td> <?= ++$key; ?> </td>
 									<td> <?= $client['clients_name']; ?> </td>
 									<td> <?= $client['designation_name']; ?> </td>
-									<td><?= $client['client_image'] ?> <img width="80" height="80" src="<?= 'uploads/clients_image/' . $client['client_image']; ?>" /> </td>
+									<td><?= $client['client_image'] ?> <img width="80" height="80" src="<?= '../uploads/clients_image/' . $client['client_image']; ?>" /> </td>
 									<td> <?= $client['client_review']; ?> </td>
 									<td class="text-center">
 										<a href="clients_update.php?id=<?= $client['id']; ?>" class="ml-2 mr-2"><i class="icon-pencil5"></i></a>

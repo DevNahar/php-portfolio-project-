@@ -1,6 +1,6 @@
 
 	<!-- Main navbar -->
-	<?php include 'includes/mainNav.php' ?>
+	<?php include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 
@@ -90,5 +90,5 @@
 
 
 <!-- heading -->
-<?php include 'includes/script.php'?>
+<?php include '../includes/script.php'?>
 <!-- /heading -->
