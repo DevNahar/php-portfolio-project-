@@ -1,6 +1,6 @@
 <?php
  session_start();
-include 'controller/dbconfig.php';
+include '../controller/dbconfig.php';
 
 $project_id = $_GET['project_id'];
 $bner_data_dlt = "DELETE FROM our_projects WHERE id = $project_id ";

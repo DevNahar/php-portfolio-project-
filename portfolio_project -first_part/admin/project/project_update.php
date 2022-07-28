@@ -1,12 +1,12 @@
 
 <?php 
 	
-    include 'controller/dbconfig.php'; ?>
+    include '../controller/dbconfig.php'; ?>
     <!-- /heading -->
     
     
     <!--head & Main navbar -->
-    <?php include_once 'includes/mainNav.php' ?>
+    <?php include_once '../includes/mainNav.php' ?>
     <!--head & Main navbar -->
     
     
@@ -104,7 +104,7 @@
     
                                     <div class="text-right">
                                         <button type="submit" class="btn btn-primary" name="update_project_submit">Submit <i class="icon-arrow-right14 position-right"></i></button>
-                                        <a href="projectlist.php"class="btn btn-warning">Back To Project List</i></a>
+                                        <a href="project_list.php"class="btn btn-warning">Back To Project List</i></a>
                                     </div>
                                 </form>
     
@@ -117,9 +117,9 @@
     
     
                         <!-- Footer -->
-                        <div class="footer text-muted">
+                        <!-- <div class="footer text-muted">
                             &copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
-                        </div>
+                        </div> -->
                         <!-- /footer -->
     
                     </div>

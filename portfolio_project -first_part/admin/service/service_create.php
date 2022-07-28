@@ -1,6 +1,6 @@
 
 	<!-- Main navbar -->
-	<?php include 'includes/mainNav.php' ?>
+	<?php include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 
@@ -14,7 +14,7 @@
 
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
-							<li><a href="banner.php"><i class="icon-menu2 position-left"></i> Banner</a></li>
+							<li><a href="banner.php"><i class="icon-menu2 position-left"></i> Service</a></li>
 							<li class="active">Create</li>
 							
 						</ul>
@@ -31,7 +31,7 @@
 					<!-- Basic datatable -->
 					<div class="panel panel-flat">
 						<div class="panel-heading mb-5" >
-							<h5 class="panel-title">Banner Create</h5>
+							<h5 class="panel-title">Service Create</h5>
 							<div class="heading-elements">
 								<ul class="icons-list">
 									
@@ -43,46 +43,41 @@
 						</div>
 
 						<div class="panel-body form_list_panel">
-						<form class="form-horizontal" action="controller/banner_controller.php" method="POST" enctype="multipart/form-data">
+						<form class="form-horizontal" action="controller/service_controller.php" method="POST">
 								<fieldset class="content-group">
 
 								
 
 									<div class="form-group">
-										<label class="control-label col-lg-2">Title</label>
+										<label class="control-label col-lg-2">Service_name</label>
 										<div class="col-lg-10">
-											<input type="text" class="form-control" name="title">
+											<input type="text" class="form-control" name="service_name">
 										</div>
 									</div>
 
-									<div class="form-group">
-										<label class="control-label col-lg-2">Sub_title</label>
-										<div class="col-lg-10">
-										<input type="text" class="form-control" name="sub_title">
-										</div>
-									</div>
+									
 
 			                        <div class="form-group">
 			                        	<label class="control-label 
-										col-lg-2">Details</label>
+										col-lg-2">Service_details</label>
 										 <div class="col-lg-10">
-										 <textarea name="details" id="details" class="form-control"  cols="5" rows="5"></textarea>
+										 <textarea name="service_details" id="service_details" class="form-control"  cols="5" rows="5"></textarea>
 										
 									</div>	
 			                    </div>
 
 
 									<div class="form-group">
-										<label class="control-label col-lg-2">Image</label>
+										<label class="control-label col-lg-2">Icon_name</label>
 										<div class="col-lg-10">										
-										<input type="file" class="form-control" name="image">
+										<input type="text" class="form-control" name="icon_name">
 										</div>
 									</div>
 								</fieldset>
 
 								<div class="text-right">
-									<button type="submit" class="btn btn-primary" name="banner_submit">Submit <i class="icon-arrow-right14 position-right"></i></button>
-									<a href="bannerlist.php"class="btn btn-warning">Back To Banner List</i></a>
+									<button type="submit" class="btn btn-primary" name="service_submit">Submit <i class="icon-arrow-right14 position-right"></i></button>
+									<a href="service_list.php"class="btn btn-warning">Back To Service List</i></a>
 								</div>
 							</form>
 
@@ -113,5 +108,5 @@
 
 
 <!-- heading -->
-<?php include 'includes/script.php'?>
+<?php include '../includes/script.php'?>
 <!-- /heading -->

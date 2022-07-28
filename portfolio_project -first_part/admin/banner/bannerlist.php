@@ -2,19 +2,12 @@
 <?php
 session_start();
 
-include_once 'controller/dbconfig.php';
+include_once '../controller/dbconfig.php';
 ?>
 
-
-
-
 <!--head & Main navbar -->
-<?php include_once 'includes/mainNav.php' ?>
+<?php include_once '../includes/mainNav.php' ?>
 <!--head & Main navbar -->
-
-
-
-
 
 
 <!-- Main content -->
@@ -25,7 +18,7 @@ include_once 'controller/dbconfig.php';
 
 		<div class="breadcrumb-line">
 			<ul class="breadcrumb">
-				<li><a href="index.html"><i class=" icon-images3 position-left"></i> Service</a></li>
+				<li><a href="index.html"><i class=" icon-images3 position-left"></i> Banner</a></li>
 				<li class="active">List</li>
 			</ul>
 		</div>
@@ -39,11 +32,11 @@ include_once 'controller/dbconfig.php';
 		<!-- Basic datatable -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
-				<h5 class="panel-title">Service List</h5>
+				<h5 class="panel-title">Banner List</h5>
 				<div class="heading-elements">
 
 					<ul class="icons-list">
-						<li style="margin-right: 10px; color: #fff;"><a href="service_create.php" class="btn btn-primary add-new">Add New</a></li>
+						<li style="margin-right: 10px; color: #fff;"><a href="bannerCreate.php" class="btn btn-primary add-new">Add New</a></li>
 						<li><a data-action="collapse"></a></li>
 						<li><a data-action="reload"></a></li>
 						<li><a data-action="close"></a></li>
@@ -75,7 +68,7 @@ include_once 'controller/dbconfig.php';
 			<!-- Data select -->
 
 			<?php
-			$select = "SELECT * FROM services ";
+			$select = "SELECT * FROM banners ";
 			$select_result = mysqli_query($db_connect, $select);
 			?>
 
@@ -84,10 +77,10 @@ include_once 'controller/dbconfig.php';
 
 					<tr>
 						<th>Sr.No</th>
-						<th>service_name</th>
-						<th>service_details</th>
-						<th>icon_name</th>
-						
+						<th>Title</th>
+						<th>Sub Title</th>
+						<th>Details</th>
+						<th>Image</th>
 						<th class="text-center">Actions</th>
 					</tr>
 
@@ -100,25 +93,24 @@ include_once 'controller/dbconfig.php';
 
 					?>
 						<tr>
-							<td width="10%"><?= ++$key ?></td>
-							<td width="20%"><?= $data['service_name'] ?></td>
-							<td width="30%"><?= $data['service_details'] ?></td>
-							<td width="20%"><?= $data['icon_name'] ?></td>
-							
-							<td class="text-center" width="20%">
+							<td><?= ++$key ?></td>
+							<td><?= $data['title'] ?></td>
+							<td><?= $data['sub_title'] ?></td>
+							<td><?= $data['details'] ?></td>
+							<td><?= $data['image'] ?>
+								<img width="30" height="30" src="<?='../uploads/banner_image/'. $data['image'] ?>" alt="image no found">
+							</td>
+							<td class="text-center">
 
-								<a href="service_update.php?service_id=<?= $data['id'] ?>"><i class=" icon-pencil7 "></i></a>
-								<a href="service_delete.php?service_id=<?= $data['id'] ?>"><i style="margin-left: 10px;" class="  icon-trash "></i></a>
+								<a href="bannerUpdate.php?banner_id=<?= $data['id'] ?>"><i class=" icon-pencil7 "></i></a>
+								<a href="bannerDelete.php?banner_id=<?= $data['id'] ?>"><i style="margin-left: 10px;" class="  icon-trash "></i></a>
 
 							</td>
-	
-
 						</tr>
 
 					<?php } ?>
 
 				</tbody>
-	
 			</table>
 		</div>
 		<!-- /basic datatable -->
@@ -141,5 +133,5 @@ include_once 'controller/dbconfig.php';
 
 
 <!-- Core JS files & footer -->
-<?php include_once 'includes/script.php' ?>
+<?php include_once '../includes/script.php' ?>
 <!-- Core JS files & footer -->

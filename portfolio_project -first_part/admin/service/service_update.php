@@ -2,8 +2,8 @@
 	<!-- Main navbar -->
     
 	<?php 
-    include 'controller/dbconfig.php';
-    include 'includes/mainNav.php' ?>
+    include '../controller/dbconfig.php';
+    include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 
@@ -124,5 +124,5 @@
 
 
 <!-- heading -->
-<?php include 'includes/script.php'?>
+<?php include '../includes/script.php'?>
 <!-- /heading -->

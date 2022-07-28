@@ -8,17 +8,17 @@
 
 
 <!-- Core JS files -->
-<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
-	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/plugins/loaders/blockui.min.js"></script>
 	<!-- /core JS files -->
 
 	<!-- Theme JS files -->	
 	
-	<script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/plugins/tables/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
 	<!-- <script type="text/javascript" src="assets/js/plugins/visualization/d3/d3.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>

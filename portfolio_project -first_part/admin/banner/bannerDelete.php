@@ -1,6 +1,6 @@
 <?php
  session_start();
-include 'controller/dbconfig.php';
+include '../controller/dbconfig.php';
 
 $banner_id = $_GET['banner_id'];
 $bner_data_dlt = "DELETE FROM banners WHERE id = $banner_id ";

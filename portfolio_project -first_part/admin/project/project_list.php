@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-include_once 'controller/dbconfig.php';
+include_once '../controller/dbconfig.php';
 ?>
 
 <!--head & Main navbar -->
-<?php include_once 'includes/mainNav.php' ?>
+<?php include_once '../includes/mainNav.php' ?>
 <!--head & Main navbar -->
 
 
@@ -118,9 +118,9 @@ include_once 'controller/dbconfig.php';
 
 
 		<!-- Footer -->
-		<div class="footer text-muted">
+		<!-- <div class="footer text-muted">
 			&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
-		</div>
+		</div> -->
 		<!-- /footer -->
 
 	</div>
@@ -133,5 +133,5 @@ include_once 'controller/dbconfig.php';
 
 
 <!-- Core JS files & footer -->
-<?php include_once 'includes/script.php' ?>
+<?php include_once '../includes/script.php' ?>
 <!-- Core JS files & footer -->

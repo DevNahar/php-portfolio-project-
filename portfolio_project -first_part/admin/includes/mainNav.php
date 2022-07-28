@@ -9,11 +9,11 @@
 
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+	<link href="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+	<link href="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
 
 
@@ -106,7 +106,7 @@
 
 
 		<!-- Main navigation -->
-		<?php include_once 'includes/navigation.php' ?>
+		<?php include_once 'navigation.php' ?>
 		<!-- /main navigation -->
 
 	</div>

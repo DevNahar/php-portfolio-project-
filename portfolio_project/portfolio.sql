@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2022 at 04:18 PM
+-- Generation Time: Jul 28, 2022 at 12:19 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -41,11 +41,10 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `title`, `sub_title`, `details`, `image`, `status`) VALUES
-(23, 'Deserunt eum sunt mi', 'Aut aut quia culpa s', 'Iste non mollitia no', 'tax.jpg', 1),
-(25, 'Eum et officia tempo', 'Velit rerum dolor ve', 'Doloremque consequat', 'Nafim pic.jpg', 1),
-(28, 'Eius', 'Cupiditate ', 'Est enim ', '1656133070.png', 1),
-(29, 'Veniam voluptatem u', 'Magnam nulla ducimus', 'Rem quis obcaecati c', '1656185222.png', 1),
-(30, 'Dolorum nulla rerum ', 'Corrupti qui veniam', 'Perspiciatis sapien', '1656185560.jpg', 1);
+(30, 'Dolorum nulla rerum ', 'Corrupti qui veniam', 'Perspiciatis 000', '1656185560.jpg', 1),
+(42, 'Totam illo occaecat ', 'Voluptas aliquip mag', 'Molestias ', '1656800691.png', 1),
+(43, 'Officia ', 'Laborum', 'Consequuntur ', '1656801456.png', 1),
+(44, 'Magnam temporibus ', 'Exercitation', 'Repudiandae ', '1656801602.png', 1);
 
 -- --------------------------------------------------------
 
@@ -97,6 +96,15 @@ CREATE TABLE `contact_us` (
   `active_status` tinyint(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `contact_topic`, `contact_details`, `icon_name`, `active_status`) VALUES
+(1, 'Iusto aliquid reicie', 'Ullamco a ipsum et i', 'Kiara Anderson', 0),
+(2, 'Magna praesentium ', '\"Iure ex blanditiis ', '', 0),
+(3, 'Facere odit et aut e', '\"Esse qui temporibus ', 'Zelenia Waller', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -137,11 +145,8 @@ CREATE TABLE `our_clients` (
 --
 
 INSERT INTO `our_clients` (`id`, `clients_name`, `designation_id`, `client_image`, `client_review`, `active_status`) VALUES
-(1, 'Regina Sears', 5, '1656421371.jpg', 'Voluptas qui consequ', 1),
-(2, 'Regina Sears', 5, '1656421491.jpg', 'Voluptas qui consequ', 1),
-(3, 'Moana Hutchinson', 5, '1656421714.png', 'In nemo minima exerc', 1),
-(5, 'Callum Cash', 4, '1656422288.png', 'Impedit atque quo s', 1),
-(6, 'Lani Nash', 4, '1656425495.jpg', 'Temporibus voluptate', 1);
+(7, 'Madaline Bates', 5, '1656614741.png', 'Voluptate pariatur ', 1),
+(9, 'Keefe Franks', 5, '1656623447.png', 'Ut soluta quam quisq', 1);
 
 -- --------------------------------------------------------
 
@@ -163,8 +168,11 @@ CREATE TABLE `our_projects` (
 --
 
 INSERT INTO `our_projects` (`id`, `category_id`, `project_name`, `project_link`, `project_thumb`, `active_status`) VALUES
-(6, 4, 'Hillary Clinton', 'https://www.xyvazuj.cc', '1656318731.png', 1),
-(7, 3, 'Howard Martin', 'https://www.cud.me.uk', '1656322948.png', 1);
+(6, 4, 'Hillary Clin', 'https://www.xyvazuj.cc', '1656619289.png', 1),
+(7, 1, 'Howard Martin', 'https://www.cud.me.uk', '1656621930.png', 1),
+(8, 2, 'Evangeline England', 'https://www.wib.info', '1656614339.png', 1),
+(9, 2, 'Irma Combs', 'https://www.nefesytomurig.ca', '1656614413.png', 1),
+(10, 3, 'Brenna Mooney', 'https://www.norepesoqiv.org', '1656622988.png', 1);
 
 -- --------------------------------------------------------
 
@@ -189,8 +197,11 @@ CREATE TABLE `our_staff` (
 --
 
 INSERT INTO `our_staff` (`id`, `staff_name`, `designation_id`, `staff_image`, `twitter`, `facebook`, `linkedin`, `instagram`, `active_status`) VALUES
-(5, 'Matthew Ray', 4, '1656400855.png', 'Autem illo reprehend', 'Libero enim obcaecat', 'Recusandae Id dele', 'Sit aut incidunt bl', 1),
-(6, 'Ann Hill', 5, '1656411489.jpg', 'Ex quia repellendus', 'Et dolore nesciunt ', 'Elit sit non quaer', 'Nostrum fugiat excep', 1);
+(8, 'Paki Hojj', 4, '1656622935.jpg', 'Vel ', 'A', 'Velit ', 'Mollitia ', 1),
+(9, 'Tallulah Webster', 0, '1656622777.png', 'Dolore dolore ut', 'Eius facere architec', 'Culpa voluptatibus ', 'Cillum vel voluptas ', 1),
+(10, 'Brittany Ballard', 0, '1656623513.png', 'Corrupti aut nesciu', 'Labore aspernatur do', 'Ex eos sequi et est', 'Suscipit iste incidu', 1),
+(11, 'September Whitehead', 0, '1656623657.png', 'Culpa iure cillum r', 'Tenetur nihil id nos', 'Aut necessitatibus e', 'Dolore facere fuga ', 1),
+(12, 'Tyrone Hess', 5, '1658406194.png', 'Nihil incididunt tem', 'Velit et ut alias v', 'Vel repellendus Mol', 'Eaque officiis esse', 1);
 
 -- --------------------------------------------------------
 
@@ -211,7 +222,9 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `service_name`, `service_details`, `icon_name`, `design_status`) VALUES
-(4, 'Zena hhhhh', 'Rerum quia ut quas s', 'Fuller Hewitt', 1);
+(5, 'Eugenia Ray', 'Quis earum sit commo', 'Demetrius Stanley', 1),
+(7, 'Jasmine Faulkner', 'Fugit impedit sed ', 'Keiko Mosley', 1),
+(8, 'Tallulah Porter', 'Neque minus quo quia', 'Jescie Phelps', 1);
 
 --
 -- Indexes for dumped tables
@@ -279,7 +292,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -297,7 +310,7 @@ ALTER TABLE `contact_messages`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `designations`
@@ -309,25 +322,25 @@ ALTER TABLE `designations`
 -- AUTO_INCREMENT for table `our_clients`
 --
 ALTER TABLE `our_clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `our_projects`
 --
 ALTER TABLE `our_projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `our_staff`
 --
 ALTER TABLE `our_staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

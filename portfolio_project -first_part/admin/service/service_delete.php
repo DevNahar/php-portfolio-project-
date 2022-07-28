@@ -1,6 +1,6 @@
 <?php
  session_start();
-include 'controller/dbconfig.php';
+include '../controller/dbconfig.php';
 
 $service_id = $_GET['service_id'];
 $bner_data_dlt = "DELETE FROM services WHERE id = $service_id ";

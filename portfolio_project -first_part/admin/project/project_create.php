@@ -2,8 +2,8 @@
 	<!-- Main navbar -->
 	<?php 
 	session_start();
-	include_once 'controller/dbconfig.php';
-	include 'includes/mainNav.php' ?>
+	include_once '../controller/dbconfig.php';
+	include '../includes/mainNav.php' ?>
 	<!-- /main navbar -->
 
 
@@ -112,9 +112,9 @@
 
 
 					<!-- Footer -->
-					<div class="footer text-muted">
+					<!-- <div class="footer text-muted">
 						&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
-					</div>
+					</div> -->
 					<!-- /footer -->
 
 				</div>
@@ -129,5 +129,5 @@
 
 
 <!-- heading -->
-<?php include 'includes/script.php'?>
+<?php include '../includes/script.php'?>
 <!-- /heading -->
