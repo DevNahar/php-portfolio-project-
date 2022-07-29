@@ -5,20 +5,27 @@ require_once "frontend_header.php";
 //banner
 $banner_select = "SELECT * FROM banners ";
 $banner_select_result = mysqli_query($db_connect, $banner_select);
+//service
+$banner_select = "SELECT * FROM banners ";
+$banner_select_result = mysqli_query($db_connect, $banner_select);
 
 ?>
+
+
   <section id="home-section" class="hero">
     <h3 class="vr">Welcome to DigiLab</h3>
     <div class="home-slider js-fullheight owl-carousel">
+    <?php 
+        if(!empty($banner_select_result)){
+        foreach($banner_select_result as $banner){
+    ?>
+
       <div class="slider-item js-fullheight">
         <div class="overlay"></div>
         <div class="container-fluid p-0">
           <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
             data-scrollax-parent="true">
-            <?php 
-              if(!empty($banner_select_result)){
-              foreach($banner_select_result as $banner){?>
-
+            
             <div class="one-third order-md-last img js-fullheight"
               style="background-image:url(<?='admin/uploads/banner_image/'.$banner['image']?>)">
               <div class="overlay"></div>
@@ -32,35 +39,13 @@ $banner_select_result = mysqli_query($db_connect, $banner_select);
                 <p><?=$banner['details']?></p>
                 <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Get in touch</a></p>
               </div>
-              <?php }}?>
+              
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="slider-item js-fullheight">
-        <div class="overlay"></div>
-        <div class="container-fluid p-0">
-          <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
-            data-scrollax-parent="true">
-            <div class="one-third order-md-last img js-fullheight"
-              style="background-image:url(images/xbg_2.jpg.pagespeed.ic.suoronuwns.jpg)">
-              <div class="overlay"></div>
-            </div>
-            <div class="one-forth d-flex js-fullheight align-items-center ftco-animate"
-              data-scrollax=" properties: { translateY: '70%' }">
-              
-              <div class="text">
-                <span class="subheading">Welcome to the digilab</span>
-                <h1 class="mb-4 mt-3"><span>Strategic</span> Design And <span>Technology</span> Agency</h1>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-                  paradisematic country.</p>
-                <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Get in touch</a></p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div> -->
+      <?php }}?>
+     
     </div>
   </section>
   <section class="ftco-section ftco-no-pb ftco-no-pt ftco-services bg-light" id="services-section">
