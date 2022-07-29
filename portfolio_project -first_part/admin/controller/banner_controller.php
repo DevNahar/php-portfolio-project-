@@ -29,7 +29,7 @@ if (isset($_POST['banner_submit'])) {
             }
         } else {
             $_SESSION['msg']  =  $file_extention .' '. "file is not supported";
-            header('location: ../bannerlist.php');
+            header('location: ../banner/bannerlist.php');
             return false;
         }
     } else {
@@ -53,7 +53,7 @@ if (isset($_POST['banner_submit'])) {
         $insert_result = mysqli_query($db_connect, $insert);
         $_SESSION['msg']  = "Data Insert Successfully";
     }
-    header('location: ../bannerlist.php');
+    header('location: ../banner/bannerlist.php');
 }
 
 
@@ -120,6 +120,6 @@ if (isset($_POST['update_banner_submit'])) {
         $update_result = mysqli_query($db_connect, $update);
         // $_SESSION['msg']  = "Data Update Successfully";
     }
-    header('location: ../bannerlist.php');
+    header('location: ../banner/bannerlist.php');
     // header('location: ../bannerupdate.php?banner_id=$banner_id');
 }

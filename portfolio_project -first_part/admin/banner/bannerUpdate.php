@@ -54,7 +54,7 @@ include '../controller/dbconfig.php'; ?>
 									
 									?>
 
-						<form class="form-horizontal" action="controller/banner_controller.php" method="POST" enctype="multipart/form-data">
+						<form class="form-horizontal" action="../controller/banner_controller.php" method="POST" enctype="multipart/form-data">
 								<fieldset class="content-group">
 
 								<?php

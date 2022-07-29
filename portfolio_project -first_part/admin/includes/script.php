@@ -27,10 +27,10 @@
 	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script> -->
 
-	<script type="text/javascript" src="assets/js/core/app.js"></script>
-	<script type="text/javascript" src="assets/js/pages/datatables_basic.js"></script>
-	<script type="text/javascript" src="assets/js/pages/dashboard.js"></script>
-	<script type="text/javascript" src="assets/js/pages/form_bootstrap_select.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/core/app.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/pages/datatables_basic.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/pages/dashboard.js"></script>
+	<script type="text/javascript" src="/lfwf_PHP/php-portfolio-project-/portfolio_project -first_part/admin/assets/js/pages/form_bootstrap_select.js"></script>
 	<!-- /theme JS files -->
 
 
